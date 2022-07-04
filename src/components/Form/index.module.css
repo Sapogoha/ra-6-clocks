@@ -1,0 +1,32 @@
+.field {
+  width: 710px;
+  border: 1px solid #3191f2;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  padding: 10px;
+  margin: 10px 0px 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: medium;
+  align-items: baseline;
+}
+
+.input {
+  font-size: inherit;
+  margin: 0px 10px;
+}
+.button {
+  box-sizing: border-box;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid #3191f2;
+  color: #ffffff;
+  background-color: #3191f2;
+}
+
+.button:hover {
+  background-color: #0a7df0;
+}

@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
+import Form from './components/Form';
+import Clocks from './components/Clocks';
+
 function App() {
+  const [data, addData] = useState([]);
+
+  const handleAdd = (item) => {
+    const notUniqueItem = data.find(
+      (el) => el.title.toLowerCase() === item.title.toLowerCase()
+    );
+
+    if (notUniqueItem) {
+      addData([...data.filter((itm) => itm.id !== notUniqueItem.id), item]);
+    } else {
+      addData((prevItems) => [...prevItems, item]);
+    }
+  };
+
+  const handleRemove = (id) => {
+    addData([...data.filter((itm) => itm.id !== id)]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Form onAdd={handleAdd} />
+      <Clocks data={data} onRemove={handleRemove} />
+    </>
   );
 }
 
