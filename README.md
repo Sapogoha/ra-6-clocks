@@ -2,7 +2,7 @@
 
 ## Lifecycle
 
-Using this project, you can add your favourite cities and their time zones to check time in tose cities at any moment.
+Using this project, you can add your favourite cities and their time zones to check time in those cities at any moment.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
